@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MES COMPTES BANCAIRES </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" 
+    integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" 
+    referrerpolicy="no-referrer" />
+    <script src="jquery-ui-1.13.2/external/jquery/jquery.js"></script>
+    <script src="jquery-ui-1.13.2/jquery-ui.js"></script>
+    <link rel="stylesheet" href="jquery-ui-1.13.2/jquery-ui.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="index.css">
+
+</head>
+<body>
+    <!--Barre de Navigation-->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand me-auto" href="#">HSC</a>
+          <div class="offcanvas offcanvas-end custom-offcanvas" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title " id="offcanvasNavbarLabel">HSC</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body ">
+              <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active " href="#" style="color:white;">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link mx-lg-2 " href="#">Produits et services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link mx-lg-2 " href="#">Mes comptes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link mx-lg-2" href="#">Centre d'aide</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+           <!---->
+          <a href="#" class="login-button flex-nowrap"><i class="fa fa-lock mx-3" aria-hidden="true"></i>Fermer La Session</a>
+          <!--bouton du offcanvas -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </nav>
+      <!--Sommaire des comptes bancaires-->
+         <div class="container  position">
+            <div class="row flex-row">
+                <div class="col-12 col-lg-8 text-start">
+                        <div class="d-flex justify-content-between align-items-center">
+                                <p class="text-left" style="font-size: 22px; font-weight: 500; ">Resumé des comptes</p>
+                                <div class="align-items-end">
+                                    <p class="totalstyle">Total: </p>
+                                    <p class="totalAmount">0</p>
+                                </div>  
+                        </div>
+                                <hr class="opacity-75">
+                                <!--deuxieme ligne-->
+                                <div class="d-flex justify-content-between align-items-center mt-5">
+                                    <p class="text-left">Cheque</p>
+                                   
+                                      <p class="totalstyle montantDepot">0</p>
+                                        
+                                </div>
+                                    <hr class="opacity-25">
+                                    <!--3 eme ligne-->
+                                    <div class="d-flex justify-content-between align-items-center mt-5">
+                                        <p class="text-left">Epargne</p>
+                                       
+                                          <p class="totalstyle spareAmount">0</p>
+                                            
+                                    </div>
+                                        <hr class="opacity-25">
+                                        <!--4 eme ligne-->
+                                        <div class="d-flex justify-content-between align-items-center mt-5">
+                                            <p class="text-left">Credit</p>
+                                           
+                                              <p class="totalstyle disposedCredit">0</p>
+                                                
+                                        </div>
+                                            <hr class="opacity-25">
+                </div>
+            <!--Deuxieme Colonne-->
+                    <div class=" d-flex col-12 col-lg-4 justify-content-center">
+                          <form>
+                            <p class="stylePaiement">Paiements et Transferts</p>
+                                <div class="row mb-3">
+                                            <div class="col-md-4">
+                                                <label for="inputState" class="form-label">De</label>
+                                                <select id="inputState " class="form-select ">
+                                              
+                                                <option id="DeOption1" >Cheque</option>
+                                                <option selected id="choosed">Choose...</option>
+                                                </select>
+                                            </div>
+                                                     <div class="col-md-4"> 
+                                                <label for="inputState" class="form-label option">À</label>
+                                                <select id="inputState " class="form-select ">
+                                                <option id="AOption1">Epargne</option>
+                                             
+                                                <option selected class="choosed">Choose..</option>
+                                                </select>
+                                            </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text" style="margin-right:  3px;">$ CAD</span>
+                                        <input type="text" class="form-control amount" >
+                                        
+                                      </div>
+                                      
+                                <button type="submit" class="btn btn-primary" style="margin-bottom: 1rem;" id="btnAppliquer">Appliquer</button>
+
+                                <div class="input-group mb-0 col-6 col-lg-12">
+                                    <button class="btn btn-light" type="button" style="margin-right: 3px;" id="btnDepot">Depot dans le compte chèque</button>
+                                    <input type="text" class="form-control" id="amountEntry" placeholder="dépot" >
+                                </div>
+                          </form>
+                    </div>
+            </div>
+            <!--Formulaire de demande de credit-->
+            <div class=" containerCustom col-lg-8 col-12">
+                <p class="mb-4 para1">Demander Un Credit</p>
+                    <div class="input-group mb-0 col-6 col-lg-12">
+                        <span class="input-group-text"  style="margin-right:  3px;">@</span>
+                        <input type="text" class="form-control " id="user" placeholder="Username">
+                    </div>
+                    <!--La classe Is Valid doit etre ajouter à coter de form-floating et form control lors du jQuery pour accepter ou refuser une valeur specifique-->
+                    <div class="input-group has-validation">
+                        <span class="input-group-text">$</span>
+                        <div class="form-floating ">
+                        <input type="text" class="form-control small-input " id="floatingInputGroup2" placeholder="Montant du Credit" required>
+                        <label for="floatingInputGroup2">Montant du Credit</label>
+                        </div>
+                        <span class="input-group-text" style="margin-left:  5px;">CAD</span>
+                        <div class="invalid-feedback">
+                       Vous ne pouvez pas prendre un crédit de plus de 20000$ CAD et de moins de 10000$ CAD.
+                        </div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <span class="input-group-text" style="margin-right:  3px;">Commentaire</span>
+                        <textarea class="form-control small-input" disabled></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary demandBtn" style="margin-top: 29px;">Demander</button>
+            </div>
+           
+     </div>
+<script>
+  function  calculerMontantTotal(){
+//
+let montantCheque = Number($('.montantDepot').text())
+let montantEpargne= Number($('.spareAmount').text())
+let montantCredit = Number($('.disposedCredit').text())
+let total = montantCheque + montantCredit + montantEpargne
+$('.totalAmount').text(total)
+//
+}
+//cette Ligne permet à l'utilisateur de faire un depot 
+ $('#btnDepot').click(function(){
+let deposedAmount = Number($('#amountEntry').val())
+//verifie si le montant entré est un montant valide 
+if(isNaN(deposedAmount)|| deposedAmount<=0){
+  alert("Veuillez entrer un montant valide")
+  return
+}
+//
+let availableAmount = Number($('.montantDepot').text())
+availableAmount = availableAmount + deposedAmount
+$('.montantDepot').text(availableAmount)
+calculerMontantTotal()
+})
+
+//transfert de l'argent du compte cheque vers le compte epargne
+
+$('#btnAppliquer').click(function(event){
+  event.preventDefault() // Empêche le comportement par défaut du formulaire
+  //recupere les options de transferts
+  let deCompte1 =$('#DeOption1').text()
+ let aCompte1 = $('#AOption1').text()
+ //
+ let montantTransferer = Number($('.amount').val())
+
+ if(isNaN(montantTransferer)|| montantTransferer <= 0){
+alert('entrer un montant dans le champs')
+return
+ }
+ // recupere les montants aactuels des comptes 
+ let epargne = Number($('.spareAmount').text())
+ let newAmount = Number($('.montantDepot').text())
+ //
+if(deCompte1 === "Cheque" && aCompte1 ==="Epargne")
+{
+    if(montantTransferer <= newAmount){
+      newAmount-=montantTransferer
+      epargne+=montantTransferer
+    }else
+    {
+      alert("Montant insuffisant dans le compte cheque")
+      return
+    }
+}else{
+  alert("choisir des comptes de transfert ")
+}
+
+$('.montantDepot').text(newAmount)
+ //
+ $('.spareAmount').text(epargne)
+//
+calculerMontantTotal()
+})
+//#region demander credit
+$(".demandBtn").click(function(){
+  let nomDemandeur = $("#user").val()
+  if(nomDemandeur === ""){
+    alert("entrer le nom du demandeur")
+    return
+  }
+  let inputValue = parseFloat($('#floatingInputGroup2').val())
+  if(isNaN(inputValue)){
+    alert("Vous devez entrer le montant du Credit que vous voulez")
+    return
+  }
+  if (inputValue > 30000 || inputValue <10000  ) {
+        // Ajout de la classe 'is-invalid' à l'élément input et à son parent
+        $("#floatingInputGroup2").addClass('is-invalid').parent().addClass('is-invalid');
+    } else {
+      let remboursement = inputValue + inputValue*0.02
+      let remboursementParMois = parseInt(remboursement/24)
+      // retire la classe 
+      $("#floatingInputGroup2").removeClass('is-invalid').parent().removeClass('is-invalid');
+      //
+      $(".small-input").removeAttr('disabled')
+      //
+      $(".small-input").text(`Crédit Accepté ! Vous devez rembourser ${inputValue} $CAD sur 2 ans donc ${remboursementParMois} $CAD par mois`)
+      //
+      $('.small-input').attr('disabled','disabled')
+      //
+     $(".disposedCredit").text(inputValue)
+     //desactive le bouton
+     $(this).prop('disabled', true);
+      
+    }
+    calculerMontantTotal()
+})
+//#endregion
+
+</script>
+     
+</body>
+</html>

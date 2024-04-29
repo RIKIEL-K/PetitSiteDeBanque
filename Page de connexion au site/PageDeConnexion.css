@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding: 0;
+   box-sizing: border-box;
+    font-family: 'poppins' , sans-serif;
+    /*To force browser to respect the width you set by applying box-sizing*/
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #edf1f4;
+}
+/*touche toute la page*/
+.login{
+    position: relative;
+    width: 380px;
+    padding: 80px 50px 50px;
+    box-shadow: 5px 15px 20px rgba(0, 0, 0 ,0.1),-15px -15px -20px #fffb;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+   gap: 20px;
+}
+.login form{
+    position: relative;
+    width: 100%;
+}
+.login form h2{
+    font-size: 2em;
+    margin-bottom: 30px;
+    line-height: 0.9em;
+}
+/*touche uniquement le welcome back*/
+.login form h2 span{
+    font-weight: 300;
+    font-size: 0.65em;
+}
+.login form .InputBox{
+position: relative;
+display: flex;
+}
+/* pour modifier l'état des balises input dans la  classe inputbox*/
+.login form .InputBox input{
+    border: none;
+    outline: none;
+    background: transparent;
+    border-radius: 10px;
+    font-size: 1em;
+}
+/*ces modifications s'appliquent uniquement au placeholder contenus dans la balise input en l'occurence username et password*/
+.login form .InputBox input[type="text"],
+.login form .InputBox input[type="password"]{
+    width: 100%;
+    padding: 15px 20px;
+    padding-left: 40px;
+    margin-bottom: 20px;
+    /*ceci permet de donner un effet creux et dégradé à l'intérieur de la balise input ou se trouve le placeholder*/
+    box-shadow: inset 5px 5px 10px rgba(0, 0 , 0, 0.1), inset -5px -5px 10px #fff;
+}
+/*lier au code de la ligne 41 à 44 pour pouvoir fonctionner. Permets de mettre le icone a la bonne position à gauche du placeholder*/
+.login form .InputBox i{
+    position: absolute;
+    left: 20px;
+    top: 25%;
+}
+.login form label{
+    display: flex;
+    align-items: center;
+}
+.login form input[type="checkbox"]{
+    margin-right: 5px;
+}
+.login form .InputBox input[type="button"]{
+    margin-top: 20px;
+    /*permet de modéliser le bouton log in*/
+    box-shadow:5px 5px 10px rgba(0, 0, 0, 0.1), -5px -5px 10px #fff;
+    /*le width fait en sorte que le box shodow du login occupe toute la largeur de la boite*/
+    width: 100%;
+    padding: 15px 20px;
+    /*grace a cursor lorsque le curseur arrive sur le bouton log in celui-ci devient directement un doight*/
+    cursor: pointer;
+    font-weight: 600;
+}
+.login form .InputBox input[type="button"]:focus{
+    box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.1), inset -5px -5px 10px #fff;
+}
+/*Pour rendre la photo fingerprint responsive*/
+.login .fingerprint{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    cursor: pointer;
+}
+/*pour donner des effets à l'image de l'empreinte digitale*/
+.login .fingerprint .fingerprintBox{
+    box-shadow:5px 5px 10px rgba(0, 0, 0, 0.1), -5px -5px 10px #fff;
+border: 3px solid #edf1f4;
+padding: 15px 20px 10px;
+border-radius: 10px;
+background: linear-gradient(315deg, #03a9f4, #0082bc);
+background: -webkit-gradient(315deg, #03a9f4,#0082bc);
+}
+/*pour donner des effets à l'image de l'empreinte digitale*/
+.login .fingerprint .fingerprintBox img{
+    max-width: 40px;
+    filter: invert(1);
+    animation: animate 1s linear infinite;
+}
+/*pour l'animation lorsqu'on passe sur le logo fingerprint*/
+@keyframes animate{
+    0%,
+    100%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0.5;
+    }
+}
+.login .fingerprint p{
+    font-weight: 500;
+}

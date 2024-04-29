@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="PageDeConnexion.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+     integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
+     crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="../jquery-ui-1.13.2/external/jquery/jquery.js"></script>
+    <script src="../jquery-ui-1.13.2/jquery-ui.js"></script>
+    <link rel="stylesheet" href="../jquery-ui-1.13.2/jquery-ui.css">
+    <title>Connexion | Ma Banque</title>
+
+</head>
+<body>
+  <div class="login">
+<form action="">
+<h2>Hello,<br><span>welcome Back</span></h2>
+<div class="InputBox">
+    <input type="text" placeholder="Username" id="UsernameConnection">
+    <i class="fa fa-user" aria-hidden="true"></i>
+</div>
+<div class="InputBox">
+    <input type="password" placeholder="password" id="passwordConnection">
+    <i class="fa fa-lock" aria-hidden="true"></i>
+</div>
+<label>
+    <input type="checkbox">Keep me logged in
+</label>
+<div class="InputBox">
+    <input type="button" value="Log in" id="ConnexionButton">
+</div>
+</form>
+<h4>OR</h4>
+<div class="fingerprint">
+    <div class="fingerprintBox">
+        <img src="finger3.png" alt="">
+    </div>
+    <p>Login with fingerprint</p>
+</div>
+  </div>
+
+<script>
+
+//Lorsque on click sur le bouton d'id ConnexionButton on est renvoyé sur le site de la banque 
+$("#ConnexionButton").click(function(){
+
+let MyUsername = $("#UsernameConnection").val()
+let MyPassword = $("#passwordConnection").val()
+if(MyUsername === "" || MyPassword === ""){
+    alert("Vous devez remplir tous les champs")
+}else{
+    window.location.href = "../index.html"
+}
+
+
+})
+
+
+</script>
+
+
+</body>
+</html>
